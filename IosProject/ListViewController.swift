@@ -15,6 +15,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     let cellId : String = "cellId"
         
     var movieArray : [Movie] = []
+    var imageCache : [String:UIImage] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,21 +24,17 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.dataSource = self
         tableView.register(UINib(nibName: "MovieTableViewCell", bundle: nil), forCellReuseIdentifier: cellId)
         
-        
         let downloadMediasCallback : ((_  movieList: [Movie]) -> Void) = {(movieList) -> Void in
             self.movieArray.removeAll()
             self.movieArray = movieList.compactMap({ (movieResp) -> Movie? in
                 
-                return Movie(id: movieResp.id, title: movieResp.title, image: movieResp.image, image2: movieResp.image2, date: movieResp.date, synopsis: movieResp.synopsis)
+            return Movie(id: movieResp.id, title: movieResp.title, image: movieResp.image, image2: movieResp.image2, date: movieResp.date, synopsis: movieResp.synopsis)
             })
             DispatchQueue.main.sync {
                 self.tableView.reloadData()
             }
         }
-        
-        
         downloadMedias(callback: downloadMediasCallback)
-        
     }
     
     //un callback de type fonction qui prend en paramètre une liste de mediaReponse et qui retourne un type void
@@ -70,7 +67,6 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movieArray.count
      }
-            
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! MovieTableViewCell
@@ -79,13 +75,19 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             return cell
         }
         
-        
         if let theTitle = movieArray[indexPath.row].title, let theDate =  movieArray[indexPath.row].date {
-//            let dateFormatter = DateFormatter()
-//            dateFormatter.locale = Locale(identifier: "FR_fr")
-//            dateFormatter.dateFormat = "M yyyy"
-//            let dateMonthYear = dateFormatter.date(from:theDate)
-            let titreDate = "\(theTitle) (\(theDate))"
+            
+            let theDate = "2019-03-22"
+            let dateFormatter = DateFormatter()
+            dateFormatter.locale = Locale(identifier: "fr_FR")
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            
+            let date = dateFormatter.date(from: theDate)!
+            dateFormatter.dateFormat = "MMMM yyyy"
+            let newDate = dateFormatter.string(from:date)
+            
+            
+            let titreDate = "\(theTitle) (\(newDate))"
             cell.titleLabel?.text = titreDate
         } else {
             print("Missing name.")
@@ -95,6 +97,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
                 
         if let urlImageCell = movieArray[indexPath.row].image {
             let url = URL(string: "https://image.tmdb.org/t/p/w342/\(urlImageCell)")
+                        
             cell.leftImage.downloadImage(from: url!)
         }
          return cell
@@ -117,25 +120,11 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
 //        }
 //    }
     
-    
-
-
 extension UIImageView {
    func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
       URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
    }
-    
-//    func decodedImage() -> UIImageView {
-//        guard let cgImage = cgImage else { return self }
-//        let size = CGSize(width: cgImage.width, height: cgImage.height)
-//        let colorSpace = CGColorSpaceCreateDeviceRGB()
-//        let context = CGContext(data: nil, width: Int(size.width), height: Int(size.height), bitsPerComponent: 8, bytesPerRow: cgImage.bytesPerRow, space: colorSpace, bitmapInfo: CGImageAlphaInfo.noneSkipFirst.rawValue)
-//        context?.draw(cgImage, in: CGRect(origin: .zero, size: size))
-//        guard let decodedImage = context?.makeImage() else { return self }
-//        return UIImage(cgImage: decodedImage)
-//    }
-    
-    
+        
    func downloadImage(from url: URL) {
       getData(from: url) {
          data, response, error in
