@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="181" id="KGk-i7-Jjw" customClass="MovieTableViewCell" customModule="IosProject" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="560" height="181"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="560" height="181"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="richard jewell" translatesAutoresizingMaskIntoConstraints="NO" id="fSZ-ER-Iec">
+                        <rect key="frame" x="10" y="10" width="90" height="141"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="90" id="M6d-3j-mb4"/>
+                            <constraint firstAttribute="width" secondItem="fSZ-ER-Iec" secondAttribute="height" multiplier="30:47" id="Rqn-JT-VVc"/>
+                        </constraints>
+                    </imageView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zD3-9A-A1C">
+                        <rect key="frame" x="110" y="10" width="440" height="125"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Titre film" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czZ-eV-MZ4">
+                                <rect key="frame" x="0.0" y="0.0" width="440" height="23"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Les categories Les categories Les categories Les categories Les categories " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Fa-Gr-Mbh">
+                                <rect key="frame" x="0.0" y="23" width="440" height="41"/>
+                                <color key="tintColor" red="0.52784974093264247" green="0.52784974093264247" blue="0.52784974093264247" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UJk-iM-ItP" userLabel="Description">
+                                <rect key="frame" x="0.0" y="64" width="440" height="61"/>
+                                <string key="text">Description courte de quelques lignes. Description courte de quelques lignes. Description courte de quelques lig...Description courte de quelques lignes. Description courte de quelques lignes. Description courte de quelques lig...Description courte de quelques lignes. Description courte de quelques lignes. Description courte de quelques lig...Description courte de quelques lignes. Description courte de quelques lignes. Description courte de quelques lig...Description courte de quelques lignes. Description courte de quelques lignes. Description courte de quelques lig...Description courte de quelques lignes. Description courte de quelques lignes. Description courte de quelques scription courte de quelques lig...Description courte de quelques lignes. Description courte de quelques lignes. Description courte de quelques lig...Description courte de quelques lignes. Description courte de quelques lignes. Description courte de quelques lig...Description courte de quelques lignes. Description courte de quelques lignes. Description courte de quelques lig...Description courte de quelques lignes. Description courte de quelques lignes. Description courte de quelques lig...Description courte de quelques lignes. Description courte de quelques lignes. Description courte de quelques scription courte de quelques lig...Description courte de quelques lignes. Description courte de quelques lignes. Description courte de quelques lig...Description courte de quelques lignes. Description courte de quelques lignes. Description courte de quelques lig...Description courte de quelques lignes. Description courte de quelques lignes. Description courte de quelques lig...Description courte de quelques lignes. Description courte de quelques lignes. Description courte de quelques lig...Description courte de quelques lignes. Description courte de quelques lignes. Description courte de quelques scription courte de quelques lig...Description courte de quelques lignes. Description courte de quelques lignes. Description courte de quelques lig...Description courte de quelques lignes. Description courte de quelques lignes. Description courte de quelques lig...Description courte de quelques lignes. Description courte de quelques lignes. Description courte de quelques lig...Description courte de quelques lignes. Description courte de quelques lignes. Description courte de quelques lig...Description courte de quelques lignes. Description courte de quelques lignes. Description courte de quelques lig...Description courte de quelques lignes. Description courte de quelques lignes. Description courte de quelques lig...</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="zD3-9A-A1C" secondAttribute="trailing" constant="10" id="3W9-Rt-jpb"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="zD3-9A-A1C" secondAttribute="bottom" constant="10" id="EH6-nk-C7y"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="fSZ-ER-Iec" secondAttribute="bottom" constant="20" symbolic="YES" id="RPS-Ek-tKA"/>
+                    <constraint firstItem="fSZ-ER-Iec" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="UoX-Wh-NEA"/>
+                    <constraint firstItem="zD3-9A-A1C" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Xcu-7h-iCh"/>
+                    <constraint firstItem="fSZ-ER-Iec" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="b3i-Pd-uhE"/>
+                    <constraint firstItem="zD3-9A-A1C" firstAttribute="leading" secondItem="fSZ-ER-Iec" secondAttribute="trailing" constant="10" id="drc-SY-ec2"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="categoriesLabel" destination="8Fa-Gr-Mbh" id="xhM-Kk-CiV"/>
+                <outlet property="descLabel" destination="UJk-iM-ItP" id="cPj-WU-snA"/>
+                <outlet property="leftImage" destination="fSZ-ER-Iec" id="Xmv-dy-DNj"/>
+                <outlet property="titleLabel" destination="czZ-eV-MZ4" id="QNI-Mf-e5u"/>
+            </connections>
+            <point key="canvasLocation" x="-178.2608695652174" y="69.977678571428569"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="richard jewell" width="1400" height="2100"/>
+    </resources>
+</document>
