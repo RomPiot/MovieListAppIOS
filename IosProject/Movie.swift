@@ -15,6 +15,7 @@ struct Movie : Decodable {
         let image2 : String?
         let date : String?
         let synopsis : String?
+        let time : Int?
 //        let popularity : String?
 //        let genre : [Genre]
         
@@ -25,17 +26,9 @@ struct Movie : Decodable {
             case image2 = "backdrop_path"
             case date = "release_date"
             case synopsis = "overview"
+            case time = "runtime"
 //            case genre = "genre_ids"
         }
-    
-//    init(title: String, image: String, synopsis: String, date: String, image2: String) {
-//        self.id = 1
-//        self.title = title
-//        self.image = image
-//        self.synopsis = synopsis
-//        self.image2 = image2
-//        self.date = date
-//    }
     }
 
 

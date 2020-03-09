@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xyQ-CY-zoI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fT2-L8-nWg">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -165,7 +165,7 @@
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="6vB-w6-Bau" firstAttribute="trailing" secondItem="8Sn-PA-CH7" secondAttribute="trailing" constant="20" symbolic="YES" id="INo-iW-Lkw"/>
+                                    <constraint firstItem="6vB-w6-Bau" firstAttribute="trailing" secondItem="8Sn-PA-CH7" secondAttribute="trailing" symbolic="YES" id="INo-iW-Lkw"/>
                                     <constraint firstItem="8Sn-PA-CH7" firstAttribute="width" secondItem="ZMw-dl-nN5" secondAttribute="width" id="RWF-zf-Anb"/>
                                     <constraint firstItem="6vB-w6-Bau" firstAttribute="bottom" secondItem="8Sn-PA-CH7" secondAttribute="bottom" id="Z6Q-hy-DR4"/>
                                     <constraint firstItem="8Sn-PA-CH7" firstAttribute="top" secondItem="6vB-w6-Bau" secondAttribute="top" id="Zie-ry-RZa"/>
@@ -184,7 +184,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Dzf-j4-qor"/>
                     <connections>
+                        <outlet property="imageFull" destination="EDF-xc-DVe" id="qyJ-Bl-SCJ"/>
+                        <outlet property="imageMini" destination="fAe-ln-NWh" id="lXm-Qe-Wnb"/>
                         <outlet property="labelDirectorMovie" destination="5jd-Er-RhD" id="WNk-I5-VTG"/>
                         <outlet property="labelSynopsis" destination="1P5-Uy-eM5" id="iQ4-Lq-Gdp"/>
                         <outlet property="labelTimeMovie" destination="Ama-gM-XlR" id="lGI-h1-MkD"/>
@@ -194,7 +197,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131.8840579710145" y="137.94642857142856"/>
+            <point key="canvasLocation" x="1113" y="783"/>
         </scene>
         <!--List View Controller-->
         <scene sceneID="zJf-OS-Erd">
@@ -205,7 +208,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="H59-F1-1Pi">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
                         </subviews>
@@ -218,13 +221,33 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xeX-nQ-38X"/>
                     </view>
+                    <navigationItem key="navigationItem" id="AQL-kH-b0h"/>
                     <connections>
                         <outlet property="tableView" destination="H59-F1-1Pi" id="h4E-ta-nN8"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="navigateToDetailView" id="lZY-Fw-anx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xY3-rZ-h55" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="783"/>
+            <point key="canvasLocation" x="101" y="783"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="UPz-Nt-y0n">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fT2-L8-nWg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="aWq-KW-XjM">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="xyQ-CY-zoI" kind="relationship" relationship="rootViewController" id="Bmw-7g-EWd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DLV-GY-9os" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-830" y="783"/>
         </scene>
     </scenes>
     <resources>
