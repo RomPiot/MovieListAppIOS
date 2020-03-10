@@ -11,7 +11,7 @@ import Foundation
 struct MovieResponse : Decodable {
     let page : Int?
     let totalResult : Int?
-    let movieList : [Movie]
+    let movieList : [Movie]?
         private enum CodingKeys: String, CodingKey {
             case page
             case totalResult = "total_results"
